@@ -2,24 +2,35 @@
 #include <stdio.h>
 #include <time.h>
 
-int main(){
+void generatePassword(int size){
     srand(time(NULL));
 
     char caracteres[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%%^&*()";
-    int i, size;
+    char password[128];
+    int i, size, maxSize = 128, minSize = 16;
 
-    printf("Digite o tamanho da senha:\n");
+
+    printf("Type the size of the password:\n");
     scanf("%d", &size);
-    if(size <= 0){
-        printf("Tamanho Invalido.\n");
-        return 1;
+
+    if(size > maxSize){
+        printf("Password too big.\nGenerating with %d characteres\n", &maxSize);
+        size = maxSize;
+    } else if(size <= 0){
+        printf("invalid size.\nGenerating wiht %d characteres\n", &minSize);
+        size = minSize;
     }
 
     printf("===Senha Gerada===\n");
     for(i = 0; i < size; i++){
-        printf("%c", caracteres[rand()%72]);
+        password[i] = caracteres[rand()%72]
+        printf("%c", password[i]);
     }
     printf("\n");
     
     return 0;
+}
+
+int main(){
+    
 }
