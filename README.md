@@ -8,6 +8,11 @@ This is a simple password generator written in C that creates a random password 
 - **Diverse Character Set:** The password is generated using a mix of lowercase letters, uppercase letters, digits, and special characters.
 - **Random Generation:** Utilizes the `rand()` function seeded with the current time to ensure random output.
 
+## Planed Features
+
+- **Memory:** The ability to save and register the password.
+- **Main Archive:** Centralized archive to keep the passwords saved.
+
 ## Requirements
 
 - A C compiler (e.g., GCC)
@@ -18,3 +23,4 @@ Open your terminal and navigate to the directory containing the source code. The
 
 ```bash
 gcc -o password_generator password_generator.c
+
